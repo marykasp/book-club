@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import BooksContainer from './components/BooksContainer'
 
 const App = () => {
   const [books, setBooks] = useState([])
@@ -23,7 +24,7 @@ const App = () => {
     fetchData()
   }, [])
 
-  return <div>Hello world</div>
+  return <BooksContainer books={books} />
 }
 
 export default App
