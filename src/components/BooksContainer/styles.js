@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   background-color: #eceef9;
-  padding: 160px calc(140px + 90px);
+  padding: 160px;
   overflow: ${({$isPanelOpen}) => ($isPanelOpen ? 'hidden' : 'scroll')};
   position: ${({$isPanelOpen}) => ($isPanelOpen ? 'fixed' : 'unset')};
 

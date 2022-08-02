@@ -20,6 +20,7 @@ export const Title = styled.h3`
   font-size: ${({$isLarge}) => ($isLarge ? '42px' : '28px')};
   margin: 0 0 10px 0;
   line-height: 1.3;
+  font-family: 'Playfair Display', serif;
   color: ${({$isLarge}) => ($isLarge ? '#fff' : '#283243')};
 
   @media (max-width: 800px) {
@@ -31,7 +32,7 @@ export const Author = styled.h4`
   font-size: 16px;
   line-height: 1.6;
   margin: 0;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Playfair Display', serif;
   font-style: italic;
   color: ${({$isLarge}) => ($isLarge ? '#F7A90C' : '#7172E6')};
 `

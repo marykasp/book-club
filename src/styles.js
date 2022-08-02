@@ -8,7 +8,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-family: 'Lusitana', serif;
+    font-family: 'Open sans', sans-serif;
     margin: 0;
     padding: 0;
     -webkit-font-smoothing: antialiased;

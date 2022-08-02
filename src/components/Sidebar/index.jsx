@@ -8,20 +8,16 @@ const Sidebar = () => {
     <Nav>
       <ul>
         <li>
-          <FaHome size={32} />
-          <span>Home</span>
+          <FaHome size={50} color="#7172E6" />
         </li>
         <li>
-          <FaBookmark size={32} />
-          <span>Popular</span>
+          <FaBookmark size={50} color="#7172E6" />
         </li>
         <li>
-          <FaHatWizard size={32} />
-          <span>Fantasy</span>
+          <FaHatWizard size={50} color="#7172E6" />
         </li>
         <li>
-          <BiBookHeart size={32} />
-          <span>Romance</span>
+          <BiBookHeart size={50} color="#7172E6" />
         </li>
       </ul>
     </Nav>

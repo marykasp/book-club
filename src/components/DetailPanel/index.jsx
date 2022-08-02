@@ -2,22 +2,27 @@ import React from 'react'
 import {Panel, Close, CloseWrapper, BG} from './styles'
 import Book from '../Book'
 
-const DetailPanel = ({book, closePanel}) => {
+const DetailPanel = ({book, closePanel, state}) => {
+  console.log(state)
   return (
     <>
-      <BG onClick={closePanel} />
-      <Panel>
-        <CloseWrapper onClick={closePanel}>
+      <BG onClick={closePanel} $state={state} />
+      <Panel $state={state}>
+        <CloseWrapper onClick={closePanel} $state={state}>
           <Close />
         </CloseWrapper>
-        <Book book={book} isLarge={true} />
 
-        <p>{book.description}</p>
-        <p>
-          <em>
-            Published in <span>{book.published}</span>
-          </em>
-        </p>
+        {book && (
+          <>
+            <Book book={book} isLarge={true} />
+            <p>{book.description}</p>
+            <p>
+              <em>
+                Published in <span>{book.published}</span>
+              </em>
+            </p>
+          </>
+        )}
       </Panel>
     </>
   )

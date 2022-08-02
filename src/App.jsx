@@ -4,6 +4,7 @@ import Header from './components/Header'
 import DetailPanel from './components/DetailPanel'
 import {GlobalStyle} from './styles'
 import Sidebar from './components/Sidebar'
+import {Transition} from 'react-transition-group'
 
 const App = () => {
   const [books, setBooks] = useState([])
@@ -37,7 +38,6 @@ const App = () => {
   }
 
   const closePanel = () => {
-    setSelectedBook(null)
     setShowPanel(false)
   }
 
@@ -46,8 +46,10 @@ const App = () => {
       <GlobalStyle />
       <Header />
       <Sidebar />
-      <BooksContainer books={books} pickBook={pickBook} isPanelOpen={selectedBook !== null} />
-      {showPanel && <DetailPanel book={selectedBook} closePanel={closePanel} />}
+      <BooksContainer books={books} pickBook={pickBook} isPanelOpen={showPanel} />
+      <Transition in={showPanel} timeout={300}>
+        {(state) => <DetailPanel book={selectedBook} closePanel={closePanel} state={state} />}
+      </Transition>
     </>
   )
 }

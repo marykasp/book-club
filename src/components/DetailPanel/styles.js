@@ -5,14 +5,16 @@ export const Panel = styled.article`
   height: calc(100vh - 82px);
   width: 660px;
   position: fixed;
+  border-left: 3px solid #fff;
   z-index: 4;
   bottom: 0;
-  right: 0;
+  right: ${({$state}) => ($state === 'entering' || $state === 'entered' ? 0 : '-660px')};
   padding: 40px 120px 60px 40px;
   overflow: scroll;
+  transition: 300ms;
   p {
-    font-family: 'Listana', serif;
-    font-size: 18px;
+    font-family: 'Open sans', sans-serif;
+    font-size: 16px;
     line-height: 1.6;
     margin: 30px 0 0;
     color: #fff;
@@ -30,7 +32,7 @@ export const Panel = styled.article`
     padding: 40px 86px 20px 20px;
     widht: 100vw;
     height: calc(100vh - 75px);
-    bottom: 0;
+    bottom: ${({$state}) => ($state === 'entering' || $state === 'entered' ? 0 : '-100vh')};
     right: unset;
   }
 `
@@ -98,4 +100,7 @@ export const BG = styled.div`
   width: 100vw;
   top: 0;
   z-index: 1;
+  opacity: ${({$state}) => ($state === 'entering' || $state === 'entered' ? 1 : 0)};
+  pointer-events: ${({$state}) => ($state === 'exited' ? 'none' : 'auto')};
+  transition: 300ms;
 `
