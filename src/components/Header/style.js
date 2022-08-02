@@ -5,6 +5,7 @@ export const Logo = styled(LogoSVG)`
   height: 40px;
   width: 270px;
   display: block;
+  color: #fff;
 
   @media (max-width: 800px) {
     height: 33px;
@@ -13,8 +14,7 @@ export const Logo = styled(LogoSVG)`
 `
 
 export const HeaderContainer = styled.header`
-  background: #ffbccc;
-  border-bottom: 2px solid #000;
+  background: #fdfdfd;
   padding: 20px 40px;
   box-sizing: border-box;
   display: flex;

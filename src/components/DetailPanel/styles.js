@@ -1,12 +1,11 @@
 import styled from 'styled-components'
 
 export const Panel = styled.article`
-  background-color: #ffe581;
-  border-left: 2px solid #000;
+  background-color: #59567f;
   height: calc(100vh - 82px);
   width: 660px;
   position: fixed;
-  z-index: 2;
+  z-index: 4;
   bottom: 0;
   right: 0;
   padding: 40px 120px 60px 40px;
@@ -23,10 +22,11 @@ export const Panel = styled.article`
 `
 
 export const P = styled.p`
-  font-family: 'Libre Baskerville', serif;
-  font-size: 16px;
+  font-family: 'Listana', serif;
+  font-size: 18px;
   line-height: 1.6;
   margin: 30px 0 0;
+  color: #fff;
 `
 
 export const EM = styled.em`
@@ -64,7 +64,7 @@ export const Close = styled.button`
 `
 
 export const CloseWrapper = styled.div`
-  background: #a7e1f8;
+  background: #f7a90c;
   border: 2px solid #000;
   border-radius: 50%;
   width: 40px;
@@ -86,4 +86,14 @@ export const CloseWrapper = styled.div`
     bottom: 28px;
     right: 20px;
   }
+`
+
+export const BG = styled.div`
+  background: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  z-index: 1;
 `
