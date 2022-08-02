@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   background-color: #eceef9;
-  padding: 160px 160px;
+  padding: 160px calc(140px + 90px);
   overflow: ${({$isPanelOpen}) => ($isPanelOpen ? 'hidden' : 'scroll')};
   position: ${({$isPanelOpen}) => ($isPanelOpen ? 'fixed' : 'unset')};
 
@@ -14,6 +14,17 @@ export const H2 = styled.h2`
   font-size: 42px;
   margin: 0 0 10px 0;
   color: #333f54;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50px;
+    left: 0;
+    background-color: #7172e6;
+    width: 40px;
+    height: 2px;
+  }
 
   @media (max-width: 800px) {
     font-size: 32px;

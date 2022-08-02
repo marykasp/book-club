@@ -10,6 +10,20 @@ export const Panel = styled.article`
   right: 0;
   padding: 40px 120px 60px 40px;
   overflow: scroll;
+  p {
+    font-family: 'Listana', serif;
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 30px 0 0;
+    color: #fff;
+    em {
+      font-style: italic;
+      span {
+        color: #f7a90c;
+        font-weight: 500;
+      }
+    }
+  }
 
   @media (max-width: 800px) {
     border-left: none;
@@ -19,18 +33,6 @@ export const Panel = styled.article`
     bottom: 0;
     right: unset;
   }
-`
-
-export const P = styled.p`
-  font-family: 'Listana', serif;
-  font-size: 18px;
-  line-height: 1.6;
-  margin: 30px 0 0;
-  color: #fff;
-`
-
-export const EM = styled.em`
-  font-style: italic;
 `
 
 export const Close = styled.button`

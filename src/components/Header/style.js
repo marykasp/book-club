@@ -23,6 +23,10 @@ export const HeaderContainer = styled.header`
   width: 100vw;
   position: fixed;
   z-index: 2;
+  a {
+    display: flex;
+    gap: 10px;
+  }
 
   @media (max-width: 800px) {
     padding: 40px;

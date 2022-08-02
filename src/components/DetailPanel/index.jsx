@@ -1,5 +1,5 @@
 import React from 'react'
-import {Panel, P, EM, Close, CloseWrapper, BG} from './styles'
+import {Panel, Close, CloseWrapper, BG} from './styles'
 import Book from '../Book'
 
 const DetailPanel = ({book, closePanel}) => {
@@ -12,10 +12,12 @@ const DetailPanel = ({book, closePanel}) => {
         </CloseWrapper>
         <Book book={book} isLarge={true} />
 
-        <P>{book.description}</P>
-        <P>
-          <EM>Published in {book.published}</EM>
-        </P>
+        <p>{book.description}</p>
+        <p>
+          <em>
+            Published in <span>{book.published}</span>
+          </em>
+        </p>
       </Panel>
     </>
   )
