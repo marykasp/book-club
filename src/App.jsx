@@ -16,12 +16,14 @@ const App = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://book-club-json.herokuapp.com/books')
+        const response = await fetch(
+          `https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=${process.env.REACT_APP_API_KEY}`
+        )
         if (response.ok) {
           const books = await response.json()
-          console.log('json-ified data', books)
+          console.log('json-ified data', books.results.books)
           // update the books state - save the fetch data
-          setBooks(books)
+          setBooks(books.results.books)
         }
       } catch (errors) {
         console.log(errors)
@@ -41,6 +43,7 @@ const App = () => {
     setShowPanel(false)
   }
 
+  console.log(process.env)
   return (
     <>
       <GlobalStyle />

@@ -1,13 +1,21 @@
-import React from 'react'
+import React, {useEffect, useRef} from 'react'
 import {Panel, Close, CloseWrapper, BG} from './styles'
 import Book from '../Book'
 
 const DetailPanel = ({book, closePanel, state}) => {
-  console.log(state)
+  const panelEl = useRef(null)
+  const prevBook = useRef(null)
+
+  // depenndenncy array - effect will run when one of those changes
+  useEffect(() => {
+    if (prevBook.current !== book) {
+      panelEl.current.scrollTop = 0
+    }
+  }, [book, prevBook])
   return (
     <>
       <BG onClick={closePanel} $state={state} />
-      <Panel $state={state}>
+      <Panel $state={state} ref={panelEl}>
         <CloseWrapper onClick={closePanel} $state={state}>
           <Close />
         </CloseWrapper>
@@ -18,7 +26,7 @@ const DetailPanel = ({book, closePanel, state}) => {
             <p>{book.description}</p>
             <p>
               <em>
-                Published in <span>{book.published}</span>
+                Published by <span>{book.publisher}</span>
               </em>
             </p>
           </>

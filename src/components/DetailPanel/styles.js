@@ -74,7 +74,7 @@ export const CloseWrapper = styled.div`
   width: 40px;
   height: 40px;
   padding: 8px;
-  display: flex;
+  display: ${({$state}) => ($state === 'entered' ? 'flex' : 'none')};
   align-items: center;
   justify-content: center;
   overflow: hidden;
