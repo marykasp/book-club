@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Container = styled.figure`
   margin: 0;
-  cursor: pointer;
+  cursor: ${({$isLarge}) => ($isLarge ? 'default' : 'pointer')};
 `
 
 export const Cover = styled.img`
@@ -15,7 +15,7 @@ export const Cover = styled.img`
 `
 
 export const Title = styled.h3`
-  font-size: 28px;
+  font-size: ${({$isLarge}) => ($isLarge ? '42px' : '28px')};
   margin: 0 0 10px 0;
   line-height: 1.3;
 `
