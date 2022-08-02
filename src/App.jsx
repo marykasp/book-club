@@ -3,10 +3,12 @@ import BooksContainer from './components/BooksContainer'
 import Header from './components/Header'
 import DetailPanel from './components/DetailPanel'
 import {GlobalStyle} from './styles'
+import Sidebar from './components/Sidebar'
 
 const App = () => {
   const [books, setBooks] = useState([])
   const [selectedBook, setSelectedBook] = useState(null)
+  const [showPanel, setShowPanel] = useState(false)
 
   // fetch data - used for creating side effects, schedules events to happen after component is rendered to DOM
   // useEffect function only needs to run once to fetch data so second parameter does not need to be based on state updates
@@ -31,18 +33,21 @@ const App = () => {
   // helper function
   const pickBook = (book) => {
     setSelectedBook(book)
+    setShowPanel(true)
   }
 
   const closePanel = () => {
     setSelectedBook(null)
+    setShowPanel(false)
   }
 
   return (
     <>
       <GlobalStyle />
       <Header />
+      <Sidebar />
       <BooksContainer books={books} pickBook={pickBook} isPanelOpen={selectedBook !== null} />
-      {selectedBook && <DetailPanel book={selectedBook} closePanel={closePanel} />}
+      {showPanel && <DetailPanel book={selectedBook} closePanel={closePanel} />}
     </>
   )
 }
