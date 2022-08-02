@@ -1,16 +1,19 @@
 import React from 'react'
-import {Panel} from './styles'
+import {Panel, P, EM, Close, CloseWrapper} from './styles'
 import Book from '../Book'
 
-const DetailPanel = ({book}) => {
+const DetailPanel = ({book, closePanel}) => {
   return (
     <Panel>
+      <CloseWrapper onClick={closePanel}>
+        <Close />
+      </CloseWrapper>
       <Book book={book} isLarge={true} />
 
-      <p>{book.description}</p>
-      <p>
-        <em>Published in {book.published}</em>
-      </p>
+      <P>{book.description}</P>
+      <P>
+        <EM>Published in {book.published}</EM>
+      </P>
     </Panel>
   )
 }
