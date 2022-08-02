@@ -8,6 +8,7 @@ import {Transition} from 'react-transition-group'
 
 const App = () => {
   const [books, setBooks] = useState([])
+  const [results, setResults] = useState({})
   const [selectedBook, setSelectedBook] = useState(null)
   const [showPanel, setShowPanel] = useState(false)
 
@@ -23,6 +24,7 @@ const App = () => {
           const books = await response.json()
           console.log('json-ified data', books.results.books)
           // update the books state - save the fetch data
+          setResults(books.results)
           setBooks(books.results.books)
         }
       } catch (errors) {
@@ -49,7 +51,7 @@ const App = () => {
       <GlobalStyle />
       <Header />
       <Sidebar />
-      <BooksContainer books={books} pickBook={pickBook} isPanelOpen={showPanel} />
+      <BooksContainer books={books} pickBook={pickBook} isPanelOpen={showPanel} results={results} />
       <Transition in={showPanel} timeout={300}>
         {(state) => <DetailPanel book={selectedBook} closePanel={closePanel} state={state} />}
       </Transition>
