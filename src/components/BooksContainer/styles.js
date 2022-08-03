@@ -15,6 +15,7 @@ export const H2 = styled.h2`
   margin: 0 0 10px 0;
   color: #333f54;
   position: relative;
+  padding-bottom: 2px;
 
   &::after {
     content: '';
@@ -22,7 +23,7 @@ export const H2 = styled.h2`
     top: 50px;
     left: 0;
     background-color: #7172e6;
-    width: 40px;
+    width: 80px;
     height: 2px;
   }
 

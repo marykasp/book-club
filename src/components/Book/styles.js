@@ -4,16 +4,20 @@ export const Container = styled.figure`
   margin: 0;
   cursor: ${({$isLarge}) => ($isLarge ? 'default' : 'pointer')};
 `
-
+// grayscale(100%);
 export const Cover = styled.img`
-  filter: grayscale(100%);
+  filter: ${({$isLarge}) => ($isLarge ? 'none' : 'grayscale(100%)')};
   border-radius: 5px;
   object-fit: cover;
   aspect-ratio: 2 / 3;
   width: ${({$isLarge}) => ($isLarge ? '70%' : '100%')};
-  border: ${({$isLarge}) => ($isLarge ? '10px solid #F7A90C' : '2px solid #000')};
+  border: ${({$isLarge}) => ($isLarge ? 'none' : '2px solid #000')};
+  transition: filter 0.3s ease-in-out;
 
   margin-bottom: 16px;
+  &:hover {
+    filter: none;
+  }
 `
 
 export const Title = styled.h3`
