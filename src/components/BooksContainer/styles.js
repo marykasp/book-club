@@ -16,7 +16,7 @@ export const Container = styled.div`
     margin-top: 10px;
   }
   @media (max-width: 800px) {
-    padding: 114px 20px;
+    padding: 150px 40px;
   }
 `
 
@@ -47,6 +47,10 @@ export const SubTitle = styled.div`
     }
   }
 
+  @media (max-width: 800px) {
+    width: 95%;
+  }
+
 `
 export const H2 = styled.h2`
   font-size: 42px;
@@ -71,9 +75,7 @@ export const H2 = styled.h2`
     margin-top: 8px;
   }
 
-  @media (max-width: 800px) {
-    font-size: 32px;
-  }
+
 `
 
 export const BookList = styled.div`

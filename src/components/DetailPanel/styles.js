@@ -7,7 +7,7 @@ export const Panel = styled.article`
   width: 660px;
   position: fixed;
   border-left: 3px solid #fff;
-  z-index: 4;
+  z-index: 2;
   bottom: 0;
   right: ${({$state}) => ($state === 'entering' || $state === 'entered' ? 0 : '-660px')};
   padding: 40px 120px 60px 40px;
@@ -31,42 +31,15 @@ export const Panel = styled.article`
   @media (max-width: 800px) {
     border-left: none;
     padding: 40px 86px 20px 20px;
-    widht: 100vw;
-    height: calc(100vh - 75px);
+    width: 100vw;
+    height: calc(100vh - 100px);
     bottom: ${({$state}) => ($state === 'entering' || $state === 'entered' ? 0 : '-100vh')};
     right: unset;
+    z-index: 3;
   }
 `
 
-export const Close = styled.button`
-  background: none;
-  border: 0;
-  cursor: pointer;
-  height: 24px;
-  width: 24px;
-  padding: 0;
-  position: relative;
 
-  /* create the close icon inside the button */
-  &::before,
-  &::after {
-    content: '';
-    background-color: #000;
-    height: 24px;
-    width: 2px;
-    position: absolute;
-    top: 0;
-    left: 9px;
-  }
-
-  &::before {
-    transform: rotate(45deg);
-  }
-
-  &::after {
-    transform: rotate(-45deg);
-  }
-`
 
 export const CloseWrapper = styled(Pill)`
   display: ${({$state}) => ($state === 'entered' ? 'flex' : 'none')};

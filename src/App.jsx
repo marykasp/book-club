@@ -23,7 +23,7 @@ const App = () => {
         const response = await fetch(`https://api.nytimes.com/svc/books/v3/lists/overview.json?api-key=${process.env.REACT_APP_API_KEY}`)
         if (response.ok) {
           const books = await response.json()
-          console.log('json-ified data', books.results.lists[2].books)
+          // console.log('json-ified data', books.results.lists[2].books)
           // update the books state - save the fetch data
           setResults(books.results)
           setBooks(books.results.lists[2].books)

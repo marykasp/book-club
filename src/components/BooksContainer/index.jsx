@@ -6,7 +6,7 @@ import Book from '../Book'
 const BooksContainer = ({books, results, pickBook, isPanelOpen, title}) => {
   const [scroll, setScroll] = useState(0)
   const prevPanelState = useRef(false)
-  console.log(books)
+
 
   // capture y scroll position after 100 milliseconds - after user has scrolled
   // don't want to be constantly rerendered, will only run when isPanelOpen value changes (dependency array)

@@ -84,4 +84,8 @@ export const Nav = styled.aside`
         content: 'YA'
       }
     }
+
+  @media (max-width: 800px) {
+    display: none;
+  }
 `
