@@ -6,6 +6,13 @@ export const Container = styled.div`
   overflow: ${({$isPanelOpen}) => ($isPanelOpen ? 'hidden' : 'scroll')};
   position: ${({$isPanelOpen}) => ($isPanelOpen ? 'fixed' : 'unset')};
 
+  span {
+    font-size: 20px;
+    color: #F173A6;
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 10px;
+  }
   @media (max-width: 800px) {
     padding: 114px 20px;
   }
@@ -16,6 +23,11 @@ export const H2 = styled.h2`
   color: #333f54;
   position: relative;
   padding-bottom: 2px;
+  width: 75%;
+  h4 {
+    display: inline-block;
+    color: #7172e6;
+  }
 
   &::after {
     content: '';
@@ -23,8 +35,9 @@ export const H2 = styled.h2`
     top: 50px;
     left: 0;
     background-color: #7172e6;
-    width: 80px;
+    width: 130px;
     height: 2px;
+    margin-top: 8px;
   }
 
   @media (max-width: 800px) {

@@ -14,8 +14,19 @@ const BooksContainer = ({books, results, pickBook, isPanelOpen}) => {
   console.log(bestSellerDate)
   return (
     <Container $isPanelOpen={isPanelOpen}>
-      <H2>{results.list_name}</H2>
+      {results.lists ? (
+      <>
+      <H2>Top Five: <h4>{results.lists[2].list_name}</h4></H2>
       <span>{bestSellerDate}</span>
+      </>
+      ) :  (
+      <>
+        <H2>{results.list_name}</H2>
+        <span>{bestSellerDate}</span>
+      </>
+      )}
+
+
 
       <BookList>
         {books.map((book) => (

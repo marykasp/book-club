@@ -1,23 +1,28 @@
 import React from 'react'
 import {Nav} from './styles'
-import {FaHome, FaBookmark, FaHatWizard} from 'react-icons/fa'
-import {BiBookHeart} from 'react-icons/bi'
+import {GiWorld, GiErlenmeyer, GiHedgehog,  GiDragonOrb, GiTalk, GiCrownOfThorns} from 'react-icons/gi'
 
-const Sidebar = () => {
+const Sidebar = ({handleClick}) => {
   return (
     <Nav>
       <ul>
-        <li>
-          <FaHome size={50} color="#7172E6" />
+        <li id="fiction" onClick={() => handleClick('hardcover-fiction')}>
+          <GiDragonOrb size={50} color="#7172E6" />
         </li>
-        <li>
-          <FaBookmark size={50} color="#7172E6" />
+        <li id="nonfiction" onClick={() => handleClick('hardcover-nonfiction')}>
+          <GiWorld size={50} color="#7172E6" />
         </li>
-        <li>
-          <FaHatWizard size={50} color="#7172E6" />
+        <li id="advice" onClick={() => handleClick('Advice How-To and Miscellaneous')}>
+          <GiTalk size={50} color="#7172E6" />
         </li>
-        <li>
-          <BiBookHeart size={50} color="#7172E6" />
+        <li id="young" onClick={() => handleClick('young-adult')}>
+          <GiCrownOfThorns size={50} color="#7172E6" />
+        </li>
+        <li id="science" onClick={() => handleClick('science')}>
+          <GiErlenmeyer size={50} color="#7172E6" />
+        </li>
+        <li id="animals" onClick={() => handleClick('animals')}>
+          <GiHedgehog size={50} color="#7172E6" />
         </li>
       </ul>
     </Nav>

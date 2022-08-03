@@ -4,12 +4,12 @@ export const Nav = styled.aside`
   position: fixed;
   top: 0;
   left: 0;
-  width: 5.6em;
+  width: 5rem;
   height: calc(100vh - 22.25rem);
-  min-height: 40rem;
+  min-height: 35rem;
   max-height: 50rem;
   margin: 11.53rem 0;
-  padding: 2rem 0.825rem;
+  padding: 2rem 0;
   background-color: transparent;
   border-radius: 10px;
   color: #000;
@@ -25,7 +25,7 @@ export const Nav = styled.aside`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 40px;
+    gap: 20px;
     width: 100%;
     list-style: none;
     font-weight: 600;
@@ -37,20 +37,51 @@ export const Nav = styled.aside`
       cursor: pointer;
       position: relative;
       transition: all 0.3s ease-in-out;
-      &::after {
-        content: '';
+        &::after {
         position: absolute;
-        background-color: #f7a90c;
-        height: 10px;
-        width: 10px;
-        top: 55px;
-        left: 27px;
-        border-radius: 50%;
+        top: -20px;
+        left: 60px;
+        background-color: #F173A6;
+        width: 80px;
+        height: 20px;
+        border-radius: 2px;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        transition: all 0.3s ease-in-out;
       }
-      &:hover {
-        color: #f7a90c;
-        transform: scale(1.2);
       }
     }
-  }
+    li#fiction:hover {
+      &::after {
+        content: 'fiction'
+      }
+    }
+    li#nonfiction:hover {
+      &::after {
+        content: 'nonfiction'
+      }
+    }
+    li#advice:hover {
+      &::after {
+        content: 'advice'
+      }
+    }
+    li#science:hover {
+      &::after {
+        content: 'science'
+      }
+    }
+    li#animals:hover {
+      &::after {
+        content: 'animals'
+      }
+    }
+    li#young:hover {
+      &::after {
+        content: 'YA'
+      }
+    }
 `
