@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const Container = styled.div`
   background-color: #eceef9;
   padding: 160px;
+  height: 100vh;
   overflow: ${({$isPanelOpen}) => ($isPanelOpen ? 'hidden' : 'scroll')};
   position: ${({$isPanelOpen}) => ($isPanelOpen ? 'fixed' : 'unset')};
   top: ${({$isPanelOpen, $top}) => ($isPanelOpen ? `-${$top}px` : 0)}
@@ -18,6 +19,35 @@ export const Container = styled.div`
     padding: 114px 20px;
   }
 `
+
+export const SubTitle = styled.div`
+  width: 75%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  span.date {
+    color: #F173a6;
+    font-weight: 600;
+    font-size: 18px;
+  }
+  span.subtitle {
+    font-weight: 500;
+    font-size: 24px;
+    color: #7172e6;
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      top: 10px;
+      left: -20px;
+      background-color: #f173a6;
+      border-radius: 50%;
+    }
+  }
+
+`
 export const H2 = styled.h2`
   font-size: 42px;
   margin: 0 0 10px 0;
@@ -25,8 +55,8 @@ export const H2 = styled.h2`
   position: relative;
   padding-bottom: 2px;
   width: 75%;
-  h4 {
-    display: inline-block;
+  span {
+    font-size: 42px;
     color: #7172e6;
   }
 

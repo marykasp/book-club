@@ -1,11 +1,12 @@
 import React, { useRef, useEffect, useState} from 'react'
 import {debounce} from 'lodash-es'
-import {BookList, Container, H2} from './styles'
+import {BookList, Container, H2, SubTitle} from './styles'
 import Book from '../Book'
 
-const BooksContainer = ({books, results, pickBook, isPanelOpen}) => {
+const BooksContainer = ({books, results, pickBook, isPanelOpen, title}) => {
   const [scroll, setScroll] = useState(0)
   const prevPanelState = useRef(false)
+  console.log(books)
 
   // capture y scroll position after 100 milliseconds - after user has scrolled
   // don't want to be constantly rerendered, will only run when isPanelOpen value changes (dependency array)
@@ -35,7 +36,6 @@ const BooksContainer = ({books, results, pickBook, isPanelOpen}) => {
     prevPanelState.current = isPanelOpen
   }, [isPanelOpen, prevPanelState, scroll])
 
-  console.log(scroll)
 
   let bestSellerDate = new Date(results.bestsellers_date).toLocaleDateString('en-us', {
     weekday: 'long',
@@ -49,13 +49,16 @@ const BooksContainer = ({books, results, pickBook, isPanelOpen}) => {
     <Container $isPanelOpen={isPanelOpen} $top={scroll}>
       {results.lists ? (
       <>
-      <H2>Top Five: <h4>{results.lists[2].list_name}</h4></H2>
-      <span>{bestSellerDate}</span>
+        <H2>Top Five: <span>{results.lists[2].list_name}</span></H2>
+        <span>{bestSellerDate}</span>
       </>
       ) :  (
       <>
         <H2>{results.list_name}</H2>
-        <span>{bestSellerDate}</span>
+        <SubTitle>
+          <span className="date">{bestSellerDate}</span>
+          <span className="subtitle">{title}</span>
+        </SubTitle>
       </>
       )}
 

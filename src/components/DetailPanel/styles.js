@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Pill } from '../../styles'
 
 export const Panel = styled.article`
   background-color: #59567f;
@@ -67,17 +68,8 @@ export const Close = styled.button`
   }
 `
 
-export const CloseWrapper = styled.div`
-  background: #f7a90c;
-  border: 2px solid #000;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  padding: 8px;
+export const CloseWrapper = styled(Pill)`
   display: ${({$state}) => ($state === 'entered' ? 'flex' : 'none')};
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
   cursor: pointer;
   top: 120px;
   right: 40px;

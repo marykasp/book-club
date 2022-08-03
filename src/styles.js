@@ -1,4 +1,4 @@
-import {createGlobalStyle} from 'styled-components'
+import styled, {createGlobalStyle} from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
   * {
@@ -14,4 +14,17 @@ export const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
+`
+
+export const Pill = styled.div`
+  background: #f7a90c;
+  border: 2px solid #000;
+  border-radius: 30px;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  display: flex;
 `

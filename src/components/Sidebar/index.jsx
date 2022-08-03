@@ -7,22 +7,22 @@ const Sidebar = ({handleClick}) => {
     <Nav>
       <ul>
         <li id="fiction" onClick={() => handleClick('hardcover-fiction')}>
-          <GiDragonOrb size={50} color="#7172E6" />
+          <GiDragonOrb size={50} color="#59567F" />
         </li>
         <li id="nonfiction" onClick={() => handleClick('hardcover-nonfiction')}>
-          <GiWorld size={50} color="#7172E6" />
+          <GiWorld size={50} color="#59567F" />
         </li>
         <li id="advice" onClick={() => handleClick('Advice How-To and Miscellaneous')}>
-          <GiTalk size={50} color="#7172E6" />
+          <GiTalk size={50} color="#59567F" />
         </li>
         <li id="young" onClick={() => handleClick('young-adult')}>
-          <GiCrownOfThorns size={50} color="#7172E6" />
+          <GiCrownOfThorns size={50} color="#59567F" />
         </li>
         <li id="science" onClick={() => handleClick('science')}>
-          <GiErlenmeyer size={50} color="#7172E6" />
+          <GiErlenmeyer size={50} color="#59567F" />
         </li>
         <li id="animals" onClick={() => handleClick('animals')}>
-          <GiHedgehog size={50} color="#7172E6" />
+          <GiHedgehog size={50} color="#59567F" />
         </li>
       </ul>
     </Nav>
