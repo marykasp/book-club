@@ -5,6 +5,7 @@ export const Container = styled.div`
   padding: 160px;
   overflow: ${({$isPanelOpen}) => ($isPanelOpen ? 'hidden' : 'scroll')};
   position: ${({$isPanelOpen}) => ($isPanelOpen ? 'fixed' : 'unset')};
+  top: ${({$isPanelOpen, $top}) => ($isPanelOpen ? `-${$top}px` : 0)}
 
   span {
     font-size: 20px;

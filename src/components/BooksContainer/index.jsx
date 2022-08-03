@@ -1,8 +1,42 @@
-import React from 'react'
+import React, { useRef, useEffect, useState} from 'react'
+import {debounce} from 'lodash-es'
 import {BookList, Container, H2} from './styles'
 import Book from '../Book'
 
 const BooksContainer = ({books, results, pickBook, isPanelOpen}) => {
+  const [scroll, setScroll] = useState(0)
+  const prevPanelState = useRef(false)
+
+  // capture y scroll position after 100 milliseconds - after user has scrolled
+  // don't want to be constantly rerendered, will only run when isPanelOpen value changes (dependency array)
+  useEffect(() => {
+    const handleScroll = debounce(() => {
+      setScroll(window.scrollY)
+    }, 100)
+
+    //if panel is not open then handle the user scroll
+    if(!isPanelOpen) {
+      window.addEventListener('scroll', handleScroll)
+    }
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [isPanelOpen])
+
+  // triggered based on the values in the dependency array
+  useEffect(() => {
+    // if panel is not open and prevPanelState current attribute returns true - call window.scroll and pass in 0 and scroll - scrolls to specific part of browser (x, y)
+    if(prevPanelState.current && !isPanelOpen) {
+      window.scroll(0, scroll)
+    }
+
+    // reassign prevPanelState equal to isPanelOpen - always know if panel was just open or not - maintain vertical scroll position when panel is closed
+    prevPanelState.current = isPanelOpen
+  }, [isPanelOpen, prevPanelState, scroll])
+
+  console.log(scroll)
+
   let bestSellerDate = new Date(results.bestsellers_date).toLocaleDateString('en-us', {
     weekday: 'long',
     year: 'numeric',
@@ -11,9 +45,8 @@ const BooksContainer = ({books, results, pickBook, isPanelOpen}) => {
   })
   // Fri Jul 22 2022 19:00:00 GMT-0500 (Central Daylight Time)
 
-  console.log(bestSellerDate)
   return (
-    <Container $isPanelOpen={isPanelOpen}>
+    <Container $isPanelOpen={isPanelOpen} $top={scroll}>
       {results.lists ? (
       <>
       <H2>Top Five: <h4>{results.lists[2].list_name}</h4></H2>
